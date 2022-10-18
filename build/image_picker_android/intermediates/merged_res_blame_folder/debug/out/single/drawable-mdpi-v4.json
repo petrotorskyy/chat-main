@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "/home/x3m/Public/project/chat/new/chat-main/build/image_picker_android/intermediates/res/merged/debug/drawable-mdpi-v4/notification_bg_normal.9.png",
+        "source": "/home/x3m/.gradle/caches/transforms-2/files-2.1/3df60cda175c66839a39c4bc780a17c1/core-1.8.0/res/drawable-mdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/home/x3m/Public/project/chat/new/chat-main/build/image_picker_android/intermediates/res/merged/debug/drawable-mdpi-v4/notification_bg_low_pressed.9.png",
+        "source": "/home/x3m/.gradle/caches/transforms-2/files-2.1/3df60cda175c66839a39c4bc780a17c1/core-1.8.0/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/home/x3m/Public/project/chat/new/chat-main/build/image_picker_android/intermediates/res/merged/debug/drawable-mdpi-v4/notification_bg_normal_pressed.9.png",
+        "source": "/home/x3m/.gradle/caches/transforms-2/files-2.1/3df60cda175c66839a39c4bc780a17c1/core-1.8.0/res/drawable-mdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/home/x3m/Public/project/chat/new/chat-main/build/image_picker_android/intermediates/res/merged/debug/drawable-mdpi-v4/notify_panel_notification_icon_bg.png",
+        "source": "/home/x3m/.gradle/caches/transforms-2/files-2.1/3df60cda175c66839a39c4bc780a17c1/core-1.8.0/res/drawable-mdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/home/x3m/Public/project/chat/new/chat-main/build/image_picker_android/intermediates/res/merged/debug/drawable-mdpi-v4/notification_bg_low_normal.9.png",
+        "source": "/home/x3m/.gradle/caches/transforms-2/files-2.1/3df60cda175c66839a39c4bc780a17c1/core-1.8.0/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
+    }
+]

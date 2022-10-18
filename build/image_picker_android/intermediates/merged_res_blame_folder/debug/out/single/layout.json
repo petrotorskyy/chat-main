@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/home/x3m/Public/project/chat/new/chat-main/build/image_picker_android/intermediates/res/merged/debug/layout/notification_template_part_time.xml",
+        "source": "/home/x3m/.gradle/caches/transforms-2/files-2.1/3df60cda175c66839a39c4bc780a17c1/core-1.8.0/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/home/x3m/Public/project/chat/new/chat-main/build/image_picker_android/intermediates/res/merged/debug/layout/custom_dialog.xml",
+        "source": "/home/x3m/.gradle/caches/transforms-2/files-2.1/3df60cda175c66839a39c4bc780a17c1/core-1.8.0/res/layout/custom_dialog.xml"
+    },
+    {
+        "merged": "/home/x3m/Public/project/chat/new/chat-main/build/image_picker_android/intermediates/res/merged/debug/layout/notification_template_part_chronometer.xml",
+        "source": "/home/x3m/.gradle/caches/transforms-2/files-2.1/3df60cda175c66839a39c4bc780a17c1/core-1.8.0/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/home/x3m/Public/project/chat/new/chat-main/build/image_picker_android/intermediates/res/merged/debug/layout/notification_action_tombstone.xml",
+        "source": "/home/x3m/.gradle/caches/transforms-2/files-2.1/3df60cda175c66839a39c4bc780a17c1/core-1.8.0/res/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/home/x3m/Public/project/chat/new/chat-main/build/image_picker_android/intermediates/res/merged/debug/layout/notification_action.xml",
+        "source": "/home/x3m/.gradle/caches/transforms-2/files-2.1/3df60cda175c66839a39c4bc780a17c1/core-1.8.0/res/layout/notification_action.xml"
+    },
+    {
+        "merged": "/home/x3m/Public/project/chat/new/chat-main/build/image_picker_android/intermediates/res/merged/debug/layout/notification_template_icon_group.xml",
+        "source": "/home/x3m/.gradle/caches/transforms-2/files-2.1/3df60cda175c66839a39c4bc780a17c1/core-1.8.0/res/layout/notification_template_icon_group.xml"
+    }
+]

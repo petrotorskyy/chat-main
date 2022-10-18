@@ -1,0 +1,34 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/x3m/Public/project/chat/new/chat-main/build/image_picker_android/intermediates/res/merged/debug/values-zh-rTW/values-zh-rTW.xml",
+            "map": [
+                {
+                    "source": "/home/x3m/.gradle/caches/transforms-2/files-2.1/3df60cda175c66839a39c4bc780a17c1/core-1.8.0/res/values-zh-rTW/values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        },
+        {
+            "outputFile": "/home/x3m/Public/project/chat/new/chat-main/build/image_picker_android/intermediates/incremental/mergeDebugResources/merged.dir/values-zh-rTW/values-zh-rTW.xml",
+            "map": [
+                {
+                    "source": "/home/x3m/.gradle/caches/transforms-2/files-2.1/3df60cda175c66839a39c4bc780a17c1/core-1.8.0/res/values-zh-rTW/values-zh-rTW.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    }
+                }
+            ]
+        }
+    ]
+}
