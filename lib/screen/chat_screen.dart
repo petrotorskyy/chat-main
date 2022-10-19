@@ -144,8 +144,17 @@ class _ChatScreenState extends State<ChatScreen> {
                     hintStyle: TextStyle(color: Colors.black),
                     suffixIcon: Padding(
                       padding: EdgeInsetsDirectional.only(end: 12.0),
-                      child: ImageIcon(
-                        AssetImage('assets/images/go_chat.png'),
+                      child: InkWell(
+                        child: ImageIcon(
+                          AssetImage('assets/images/go_chat.png'),
+                        ),
+                        /*onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        MessagePage()));
+                          }*/
                       ), // myIcon is a 48px-wide widget.
                     ),
                     hintText: "Enter Chat id",
