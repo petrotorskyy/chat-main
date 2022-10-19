@@ -1,33 +1,41 @@
 {
   "project_info": {
-    "project_number": "621448060449",
-    "project_id": "chatt-ec0be",
-    "storage_bucket": "chatt-ec0be.appspot.com"
+    "project_number": "644414261907",
+    "project_id": "chatting-a6ed3",
+    "storage_bucket": "chatting-a6ed3.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:621448060449:android:0cd68a71fa0de5358e4d60",
+        "mobilesdk_app_id": "1:644414261907:android:e9aa949d3a7afb6c5c1b66",
         "android_client_info": {
-          "package_name": "com.example.romoufer.chat.chat"
+          "package_name": "com.example.chat"
         }
       },
       "oauth_client": [
         {
-          "client_id": "621448060449-gia1g9v4bo6uoavkf8vrhubf8u5cfsek.apps.googleusercontent.com",
+          "client_id": "644414261907-ra0grlnpg5ps8e4aosu37s1cl32t8mmg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.chat",
+            "certificate_hash": "862a58431852c9dee74b9b6ad3dda17228c8063e"
+          }
+        },
+        {
+          "client_id": "644414261907-a5gisl87t4ge5h08bs2ov4b3rpdpcsrg.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAUUkDrEngLO5SRh8KSTCHeUqJjc1z44Rs"
+          "current_key": "AIzaSyAyD4WcjLpxoYV6Wg4xssRzHJK6YYpxNtQ"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "621448060449-gia1g9v4bo6uoavkf8vrhubf8u5cfsek.apps.googleusercontent.com",
+              "client_id": "644414261907-a5gisl87t4ge5h08bs2ov4b3rpdpcsrg.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
