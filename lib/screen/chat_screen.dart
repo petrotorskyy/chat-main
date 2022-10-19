@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:chat/models/user_model.dart';
+import 'package:chat/screen/MessagePage.dart';
 import 'package:chat/widgets/big_text.dart';
 import 'package:chat/widgets/small_text.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -82,15 +83,16 @@ class _ChatScreenState extends State<ChatScreen> {
                   //color: Colors.red,
                   child: image != null
                       ? InkWell(
+                          onTap: pickImage,
                           child: Image.file(
                             image!,
                             width: 216,
                             height: 213,
                             fit: BoxFit.cover,
                           ),
-                          onTap: pickImage,
                         )
                       : InkWell(
+                          onTap: pickImage,
                           child: Container(
                             width: 216,
                             height: 213,
@@ -108,7 +110,6 @@ class _ChatScreenState extends State<ChatScreen> {
                               ),
                             ),
                           ),
-                          onTap: pickImage,
                         ),
                 ),
               ),
@@ -138,14 +139,21 @@ class _ChatScreenState extends State<ChatScreen> {
                 child: TextFormField(
                   autocorrect: false,
                   maxLines: 1,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(
+                  decoration: InputDecoration(
+                    border: const OutlineInputBorder(
                         borderSide: BorderSide(style: BorderStyle.solid)),
-                    hintStyle: TextStyle(color: Colors.black),
+                    hintStyle: const TextStyle(color: Colors.black),
                     suffixIcon: Padding(
-                      padding: EdgeInsetsDirectional.only(end: 12.0),
-                      child: ImageIcon(
-                        AssetImage('assets/images/go_chat.png'),
+                      padding: const EdgeInsetsDirectional.only(end: 12.0),
+                      child: GestureDetector(
+                        onTap: (() {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      MessagePage()));
+                        }),
+                        child: Image.asset("assets/images/go_chat.png"),
                       ), // myIcon is a 48px-wide widget.
                     ),
                     hintText: "Enter Chat id",
