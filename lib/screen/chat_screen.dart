@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:chat/models/user_model.dart';
+import 'package:chat/page/MessagePage.dart';
 import 'package:chat/widgets/big_text.dart';
 import 'package:chat/widgets/small_text.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -138,23 +139,21 @@ class _ChatScreenState extends State<ChatScreen> {
                 child: TextFormField(
                   autocorrect: false,
                   maxLines: 1,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(
+                  decoration: InputDecoration(
+                    border: const OutlineInputBorder(
                         borderSide: BorderSide(style: BorderStyle.solid)),
-                    hintStyle: TextStyle(color: Colors.black),
+                    hintStyle: const TextStyle(color: Colors.black),
                     suffixIcon: Padding(
-                      padding: EdgeInsetsDirectional.only(end: 12.0),
-                      child: InkWell(
-                        child: ImageIcon(
-                          AssetImage('assets/images/go_chat.png'),
-                        ),
-                        /*onTap: () {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (BuildContext context) =>
-                                        MessagePage()));
-                          }*/
+                      padding: const EdgeInsetsDirectional.only(end: 12.0),
+                      child: GestureDetector(
+                        child: Image.asset('assets/images/go_chat.png'),
+                        onTap: (() {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (BuildContext context) =>
+                                      MessagePage()));
+                        }),
                       ), // myIcon is a 48px-wide widget.
                     ),
                     hintText: "Enter Chat id",
