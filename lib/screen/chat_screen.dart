@@ -1,7 +1,7 @@
 import 'dart:io';
 
 import 'package:chat/models/user_model.dart';
-import 'package:chat/page/MessagePage.dart';
+import 'package:chat/screen/MessagePage.dart';
 import 'package:chat/widgets/big_text.dart';
 import 'package:chat/widgets/small_text.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -83,15 +83,16 @@ class _ChatScreenState extends State<ChatScreen> {
                   //color: Colors.red,
                   child: image != null
                       ? InkWell(
+                          onTap: pickImage,
                           child: Image.file(
                             image!,
                             width: 216,
                             height: 213,
                             fit: BoxFit.cover,
                           ),
-                          onTap: pickImage,
                         )
                       : InkWell(
+                          onTap: pickImage,
                           child: Container(
                             width: 216,
                             height: 213,
@@ -109,7 +110,6 @@ class _ChatScreenState extends State<ChatScreen> {
                               ),
                             ),
                           ),
-                          onTap: pickImage,
                         ),
                 ),
               ),
@@ -146,7 +146,6 @@ class _ChatScreenState extends State<ChatScreen> {
                     suffixIcon: Padding(
                       padding: const EdgeInsetsDirectional.only(end: 12.0),
                       child: GestureDetector(
-                        child: Image.asset('assets/images/go_chat.png'),
                         onTap: (() {
                           Navigator.push(
                               context,
@@ -154,6 +153,7 @@ class _ChatScreenState extends State<ChatScreen> {
                                   builder: (BuildContext context) =>
                                       MessagePage()));
                         }),
+                        child: Image.asset("assets/images/go_chat.png"),
                       ), // myIcon is a 48px-wide widget.
                     ),
                     hintText: "Enter Chat id",
