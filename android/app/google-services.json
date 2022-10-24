@@ -2,7 +2,8 @@
   "project_info": {
     "project_number": "644414261907",
     "project_id": "chatting-a6ed3",
-    "storage_bucket": "chatting-a6ed3.appspot.com"
+    "storage_bucket": "chatting-a6ed3.appspot.com",
+    "firebase_url": "https://chatting-a6ed3-default-rtdb.europe-west1.firebasedatabase.app"
   },
   "client": [
     {
