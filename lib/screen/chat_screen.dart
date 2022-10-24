@@ -18,11 +18,12 @@ class ChatScreen extends StatefulWidget {
 }
 
 class _ChatScreenState extends State<ChatScreen> {
+  final databaseReference = FirebaseDatabase.instance.reference();
   File? image;
   final picker = ImagePicker();
   User? user;
   UserModel? userModel;
-  DatabaseReference? userRef;
+  DatabaseReference? userRef, userM;
 
   Future pickImage() async {
     try {
@@ -65,106 +66,109 @@ class _ChatScreenState extends State<ChatScreen> {
     return Scaffold(
       body: Container(
         child: SingleChildScrollView(
-          child: Column(
-            children: [
-              Center(
-                child: Positioned(
-                  top: 97,
-                  left: 158,
-                  right: 170,
-                  child: BigText(text: "Chat App"),
-                ),
-              ),
-              const SizedBox(height: 137 // Dimensions.height137,
+          child: SafeArea(
+            child: Column(
+              children: [
+                Center(
+                  child: Positioned(
+                    top: 97,
+                    left: 158,
+                    right: 170,
+                    child: BigText(text: "Chat App"),
                   ),
-              Positioned(
-                left: 13, top: 10, right: 10, bottom: 10, //465),
-                child: Container(
-                  //color: Colors.red,
-                  child: image != null
-                      ? InkWell(
-                          onTap: pickImage,
-                          child: Image.file(
-                            image!,
-                            width: 216,
-                            height: 213,
-                            fit: BoxFit.cover,
-                          ),
-                        )
-                      : InkWell(
-                          onTap: pickImage,
-                          child: Container(
-                            width: 216,
-                            height: 213,
-                            decoration: const BoxDecoration(
-                              borderRadius: BorderRadius.only(
-                                topRight: Radius.circular(20),
-                                topLeft: Radius.circular(20),
-                                bottomRight: Radius.circular(20),
-                                bottomLeft: Radius.circular(20),
-                              ),
-                              image: DecorationImage(
-                                fit: BoxFit.cover,
-                                image: NetworkImage(
-                                    "https://dpbnri2zg3lc2.cloudfront.net/en/wp-content/uploads/2021/01/user_flows-2.jpg"),
+                ),
+                const SizedBox(height: 137 // Dimensions.height137,
+                    ),
+                Positioned(
+                  left: 13, top: 10, right: 10, bottom: 10, //465),
+                  child: Container(
+                    //color: Colors.red,
+                    child: image != null
+                        ? InkWell(
+                            onTap: pickImage,
+                            child: Image.file(
+                              image!,
+                              width: 216,
+                              height: 213,
+                              fit: BoxFit.cover,
+                            ),
+                          )
+                        : InkWell(
+                            onTap: pickImage,
+                            child: Container(
+                              width: 216,
+                              height: 213,
+                              decoration: const BoxDecoration(
+                                borderRadius: BorderRadius.only(
+                                  topRight: Radius.circular(20),
+                                  topLeft: Radius.circular(20),
+                                  bottomRight: Radius.circular(20),
+                                  bottomLeft: Radius.circular(20),
+                                ),
+                                image: DecorationImage(
+                                  fit: BoxFit.cover,
+                                  image: NetworkImage(
+                                      "https://dpbnri2zg3lc2.cloudfront.net/en/wp-content/uploads/2021/01/user_flows-2.jpg"),
+                                ),
                               ),
                             ),
                           ),
-                        ),
+                  ),
                 ),
-              ),
-              const SizedBox(
-                height: 16, //Dimensions.height16,
-              ),
-              SmallText(text: "ID:"),
-              const SizedBox(
-                height: 10,
-              ),
-              SizedBox(
-                  height: 35,
-                  width: 283,
-                  child: TextField(
-                    controller: UserNameTextController,
-                    decoration: const InputDecoration(
-                        hintStyle: TextStyle(color: Colors.black),
-                        hintText: 'Enter user name' //userModel!.fullName
-                        ),
-                  )),
-              const SizedBox(
-                height: 38,
-              ),
-              SizedBox(
-                height: 66,
-                width: 323,
-                child: TextFormField(
-                  autocorrect: false,
-                  maxLines: 1,
-                  decoration: InputDecoration(
-                    border: const OutlineInputBorder(
-                        borderSide: BorderSide(style: BorderStyle.solid)),
-                    hintStyle: const TextStyle(color: Colors.black),
-                    suffixIcon: Padding(
-                      padding: const EdgeInsetsDirectional.only(end: 12.0),
-                      child: GestureDetector(
-                        onTap: (() {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (BuildContext context) =>
-                                      MessagePage()));
-                        }),
-                        child: Image.asset("assets/images/go_chat.png"),
-                      ), // myIcon is a 48px-wide widget.
+                const SizedBox(
+                  height: 16, //Dimensions.height16,
+                ),
+                //SmallText(text: "ID:${userModel!.uid}"),
+                SmallText(text: "ID:${user!.uid}"),
+                const SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                    height: 35,
+                    width: 283,
+                    child: TextField(
+                      controller: UserNameTextController,
+                      decoration: const InputDecoration(
+                          hintStyle: TextStyle(color: Colors.black),
+                          hintText: "User name " //userModel!.fullName
+                          ),
+                    )),
+                const SizedBox(
+                  height: 38,
+                ),
+                SizedBox(
+                  height: 66,
+                  width: 323,
+                  child: TextFormField(
+                    autocorrect: false,
+                    maxLines: 1,
+                    decoration: InputDecoration(
+                      border: const OutlineInputBorder(
+                          borderSide: BorderSide(style: BorderStyle.solid)),
+                      hintStyle: const TextStyle(color: Colors.black),
+                      suffixIcon: Padding(
+                        padding: const EdgeInsetsDirectional.only(end: 12.0),
+                        child: GestureDetector(
+                          onTap: (() {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (BuildContext context) =>
+                                        MessagePage()));
+                          }),
+                          child: Image.asset("assets/images/go_chat.png"),
+                        ), // myIcon is a 48px-wide widget.
+                      ),
+                      hintText: "Enter Chat id",
                     ),
-                    hintText: "Enter Chat id",
-                  ),
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                    ),
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
