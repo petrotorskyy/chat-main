@@ -2,16 +2,18 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 class MessageWidget extends StatelessWidget {
-
   final String text;
   final DateTime createdAt;
 
-  const MessageWidget(this.createdAt, this.text);
+  const MessageWidget(
+    this.createdAt,
+    this.text,
+  );
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.only(left: 1, top: 5, right: 1, bottom: 2),
+      padding: const EdgeInsets.only(left: 1, top: 5, right: 1, bottom: 2),
       child: Column(
         children: [
           Container(
@@ -33,6 +35,17 @@ class MessageWidget extends StatelessWidget {
               child: Wrap(
                 children: <Widget>[
                   Row(
+                    /* mainAxisAlignment: isSender
+                        ? MainAxisAlignment.end
+                        : MainAxisAlignment.start,
+                    children: [
+                      if (!isSender) ...[
+                        const CircleAvatar(
+                          radius: 12,
+                          backgroundImage:
+                              AssetImage('assets/images/ic_profile.png'),
+                        ),
+                      ],*/
                     children: [
                       Text(text),
                     ],
@@ -41,11 +54,12 @@ class MessageWidget extends StatelessWidget {
               ),
             ),
           ),
-          Padding(padding: const EdgeInsets.only(top: 4),
+          Padding(
+            padding: const EdgeInsets.only(top: 4),
             child: Align(
               alignment: Alignment.topRight,
               child: Text(
-                DateFormat('kk:nma, dd-MM-yyyy').format(createdAt).toString(),
+                DateFormat('kk:m a').format(createdAt).toString(),
                 style: const TextStyle(color: Colors.grey),
               ),
             ),

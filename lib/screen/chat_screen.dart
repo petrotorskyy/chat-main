@@ -1,5 +1,4 @@
 import 'dart:io';
-
 import 'package:chat/models/user_model.dart';
 import 'package:chat/screen/MessagePage.dart';
 import 'package:chat/widgets/big_text.dart';
@@ -19,11 +18,12 @@ class ChatScreen extends StatefulWidget {
 
 class _ChatScreenState extends State<ChatScreen> {
   final databaseReference = FirebaseDatabase.instance.reference();
+
   File? image;
   final picker = ImagePicker();
   User? user;
   UserModel? userModel;
-  DatabaseReference? userRef, userM;
+  DatabaseReference? userRef;
 
   Future pickImage() async {
     try {
@@ -40,10 +40,20 @@ class _ChatScreenState extends State<ChatScreen> {
   TextEditingController UserNameTextController = TextEditingController();
 
   _getUserDetails() async {
-    DataSnapshot snapshot = (await userRef!.once()) as DataSnapshot;
+    /* DataSnapshot snapshot = (await userRef!.once()) as DataSnapshot;
 
     var snapshots;
     userModel = UserModel.fromMap(Map<String, dynamic>.from(snapshots.value));
+*/
+    userRef = FirebaseDatabase.instance
+        .ref('users')
+        .child('mJiGAYuGWgNOlEGmwotCTEQ393g1');
+    userRef!.once().then((DatabaseEvent databaseEvent) {
+      userModel = UserModel.fromMap(
+          databaseEvent.snapshot.value as Map<String, dynamic>);
+    });
+    print("------------------");
+    print(userModel!.fullName);
 
     setState(() {});
   }
@@ -52,6 +62,20 @@ class _ChatScreenState extends State<ChatScreen> {
   void initState() {
     super.initState();
 
+    /*_dbref = FirebaseDatabase.instance
+        .ref('users')
+        .child('mJiGAYuGWgNOlEGmwotCTEQ393g1');
+    _dbref!.once().then((DatabaseEvent databaseEvent) {
+      userModel = UserModel.fromMap(
+          databaseEvent.snapshot.value as Map<String, dynamic>);
+      /* Map valueMap = jsonDecode(databaseEvent.snapshot.value.toString());
+      Map<String, dynamic> myUser =
+          jsonDecode(databaseEvent.snapshot.value.toString());
+      var user1 = UserModel.fromMap(myUser);
+      print('Howdy, ${user1.fullName}!');*/
+      //print("FullName=" + valueMap['fullName']);
+    });
+*/
     user = FirebaseAuth.instance.currentUser;
     if (user != null) {
       userRef =
@@ -129,9 +153,9 @@ class _ChatScreenState extends State<ChatScreen> {
                     child: TextField(
                       controller: UserNameTextController,
                       decoration: const InputDecoration(
-                          hintStyle: TextStyle(color: Colors.black),
-                          hintText: "User name " //userModel!.fullName
-                          ),
+                        hintStyle: TextStyle(color: Colors.black),
+                        hintText: "user name", //userModel!.fullName
+                      ),
                     )),
                 const SizedBox(
                   height: 38,

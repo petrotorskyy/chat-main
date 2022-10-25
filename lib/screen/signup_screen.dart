@@ -113,7 +113,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     UserCredential userCredential =
                         await auth.createUserWithEmailAndPassword(
                             email: email, password: password);
-
+                    print("database go but nothing..");
                     if (userCredential.user != null) {
                       // store user information in Realtime database
 

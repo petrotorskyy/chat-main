@@ -125,20 +125,21 @@
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="copy_toast_msg">Link copied to clipboard</string>
-    <string name="default_web_client_id" translatable="false">278988112701-jc22dh44uv5kicu09hvl7rgani0sgml8.apps.googleusercontent.com</string>
+    <string name="default_web_client_id" translatable="false">644414261907-a5gisl87t4ge5h08bs2ov4b3rpdpcsrg.apps.googleusercontent.com</string>
     <string name="fallback_menu_item_copy_link">Copy link</string>
     <string name="fallback_menu_item_open_in_browser">Open in browser</string>
     <string name="fallback_menu_item_share_link">Share link</string>
-    <string name="gcm_defaultSenderId" translatable="false">278988112701</string>
-    <string name="google_api_key" translatable="false">AIzaSyABnE75fBo09FWlBQDhik2QVsFI1Tjsn0U</string>
-    <string name="google_app_id" translatable="false">1:278988112701:android:b6ce18abc5c30d2c14bb54</string>
-    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyABnE75fBo09FWlBQDhik2QVsFI1Tjsn0U</string>
-    <string name="google_storage_bucket" translatable="false">chattest-14203.appspot.com</string>
-    <string name="project_id" translatable="false">chattest-14203</string>
+    <string name="firebase_database_url" translatable="false">https://chatting-a6ed3-default-rtdb.europe-west1.firebasedatabase.app</string>
+    <string name="gcm_defaultSenderId" translatable="false">644414261907</string>
+    <string name="google_api_key" translatable="false">AIzaSyAyD4WcjLpxoYV6Wg4xssRzHJK6YYpxNtQ</string>
+    <string name="google_app_id" translatable="false">1:644414261907:android:e9aa949d3a7afb6c5c1b66</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyAyD4WcjLpxoYV6Wg4xssRzHJK6YYpxNtQ</string>
+    <string name="google_storage_bucket" translatable="false">chatting-a6ed3.appspot.com</string>
+    <string name="project_id" translatable="false">chatting-a6ed3</string>
     <string name="status_bar_notification_info_overflow">999+</string>
     <style name="LaunchTheme" parent="@android:style/Theme.Light.NoTitleBar">
         <!-- Show a splash screen on the activity. Automatically removed when
-             Flutter draws its first frame -->
+             the Flutter engine draws its first frame -->
         <item name="android:windowBackground">@drawable/launch_background</item>
     </style>
     <style name="NormalTheme" parent="@android:style/Theme.Light.NoTitleBar">

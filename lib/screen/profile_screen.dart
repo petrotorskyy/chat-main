@@ -21,6 +21,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
   User? user;
   UserModel? userModel;
   DatabaseReference? userRef;
+  final _database = FirebaseDatabase.instance.reference();
 
   File? imageFile;
   bool showLocalFile = false;
@@ -28,8 +29,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
   _getUserDetails() async {
     DataSnapshot snapshot = (await userRef!.once()) as DataSnapshot;
 
-    var snapshots;
-    userModel = UserModel.fromMap(Map<String, dynamic>.from(snapshots.value));
+    userModel = UserModel.fromMap(
+        Map<String, dynamic>.from(snapshot.value as Map<String, dynamic>));
+    print(userModel);
+    print("cccc= ${userModel!.fullName}");
 
     setState(() {});
   }
